@@ -6,14 +6,12 @@
 
           <!-- Ad video area -->
           <div class="relative bg-black aspect-video flex items-center justify-center">
-            <video
-              ref="adVideo"
-              class="w-full h-full object-cover"
-              autoplay
-              muted
-              loop
-              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-            />
+            <!-- 广告视频占位：正式上线时替换为阿里云 OSS / 腾讯云 COS 的视频链接 -->
+            <div class="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-gray-900 to-black">
+              <div class="text-5xl">📺</div>
+              <p class="text-amber-400 text-sm font-semibold">广告加载中</p>
+              <p class="text-gray-600 text-xs">请稍候，倒计时结束后可关闭</p>
+            </div>
 
             <!-- Countdown overlay -->
             <div class="absolute top-3 right-3 flex items-center gap-2">

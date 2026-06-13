@@ -175,6 +175,7 @@
             <!-- Video player -->
             <div class="relative bg-black aspect-video">
               <video
+                v-if="!videoError && script.videoUrl"
                 ref="videoEl"
                 :src="script.videoUrl"
                 class="w-full h-full object-cover"
@@ -182,11 +183,21 @@
                 controlsList="nodownload"
                 disablePictureInPicture
                 @contextmenu.prevent
+                @error="videoError = true"
                 playsinline
                 preload="metadata"
               />
+              <!-- 视频无法加载时的占位 -->
+              <div v-else class="w-full h-full flex flex-col items-center justify-center gap-3 text-center px-6">
+                <div class="text-4xl">🎬</div>
+                <p class="text-amber-400 text-sm font-semibold">视频样片暂不可播放</p>
+                <p class="text-gray-500 text-xs leading-5">
+                  演示视频托管于海外服务器，国内网络可能无法加载。<br/>
+                  正式签约后将提供国内高速播放链接。
+                </p>
+              </div>
               <!-- Sample label -->
-              <div class="absolute top-3 left-3 bg-black/70 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md pointer-events-none">
+              <div v-if="!videoError && script.videoUrl" class="absolute top-3 left-3 bg-black/70 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md pointer-events-none">
                 第1集 · 成品样片
               </div>
             </div>
@@ -261,6 +272,7 @@ const activeTab = ref('synopsis')
 const selectedEp = ref(1)
 const contactOpen = ref(false)
 const videoEl = ref(null)
+const videoError = ref(false)
 
 const detailTabs = [
   { key: 'synopsis', icon: '📖', label: '故事大纲' },

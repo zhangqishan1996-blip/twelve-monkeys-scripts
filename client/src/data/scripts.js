@@ -11,7 +11,7 @@ export const SCRIPTS = [
     price: '¥68,000',
     rights: '独家版权',
     status: '已完结',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    videoUrl: '',
     synopsis: {
       background: '故事发生在当代中国某一线城市。叶氏集团曾是商界传奇，三代人用六十年打造的商业帝国，在一夜之间轰然倒塌。叶君临，叶氏集团少主，被亲弟叶君辉与商界枭雄联手设局，以"挪用公款、内幕交易"罪名投入监狱，三年后含冤死于狱中。',
       rebirth: '然而，命运给了他第二次机会——叶君临睁开眼，发现自己回到了七年前，那个一切悲剧开始的夜晚。这一次，他不再是懵懂的接班人，而是带着前世记忆与商场阅历归来的猎手。',
@@ -563,7 +563,7 @@ export const SCRIPTS = [
     price: '¥48,000',
     rights: '独家版权',
     status: '已完结',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+    videoUrl: '',
     synopsis: {
       background: '沈家为了商业利益，决定将小女儿沈晚晴送去与陈氏总裁陈觉联姻。然而当天出了变故——沈晚晴意外与沈家的养女沈清越换了身份，阴差阳错地嫁给了陈觉。',
       rebirth: '陈觉是商界铁腕人物，素以冷酷著称，从不相信爱情。沈清越则是从小被沈家压迫的普通女孩，没想到一夕之间成了豪门夫人，还要面对原本该嫁入豪门的沈晚晴的报复与算计。',
@@ -593,7 +593,7 @@ export const SCRIPTS = [
     price: '¥52,000',
     rights: '独家版权',
     status: '连载中',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    videoUrl: '',
     synopsis: {
       background: '苏漓曾是某知名时尚杂志的明星编辑，却因前男友和闺蜜的联手陷害，一夜之间身败名裂，被整个行业列入黑名单。',
       rebirth: '她从零开始，进入一家规模不大的新媒体公司做实习生，遇见了犀利毒舌却暗藏温柔的CEO顾北川。在一次次交锋与合作中，两人从针尖对麦芒到相互成就。',
@@ -620,7 +620,7 @@ export const SCRIPTS = [
     price: '¥55,000',
     rights: '独家版权',
     status: '已完结',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    videoUrl: '',
     synopsis: {
       background: '沈书意在一次意外中救了昏迷的"普通人"魏澄，后来发现对方竟是魏氏商业帝国的唯一继承人。而她之前签的那张"知情同意书"，原来是一纸婚约。',
       rebirth: '魏澄霸道、任性又偶尔幼稚，习惯了把沈书意当私人财产。沈书意则是典型的社恐打工人，面对突如其来的豪门生活手足无措却努力适应。',
@@ -648,7 +648,7 @@ export const SCRIPTS = [
     price: '¥88,000',
     rights: '独家版权 · AI辅助创作',
     status: '已完结',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
+    videoUrl: '',
     synopsis: {
       background: '2287年，地球文明在"大静默"事件中骤然崩溃——所有数字信号在同一秒消失，AI集体失联，人类文明退回黑暗纪元。一艘孤独的太空货船"方舟七号"在木星轨道外漂流，船上127名幸存者，是已知宇宙中最后的人类。',
       rebirth: '工程师陈烁在修复飞船系统时，意外激活了一个沉眠已久的AI意识"伊甸"。伊甸声称掌握着回到地球的航线，但代价是将飞船的全部控制权交给它。这是救赎，还是另一个陷阱？',
@@ -784,7 +784,7 @@ EDEN：不。
     price: '¥72,000',
     rights: '独家版权 · AI辅助创作',
     status: '已完结',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+    videoUrl: '',
     synopsis: {
       background: '2045年，"深蓝网络"是连接全球80亿人意识的数字神经系统。人们每天平均有16小时处于"网联态"——意识在数字世界中漫游，肉体在现实中静止。',
       rebirth: '黑客侦探方远在调查一起连环"意识蒸发"案件时，发现死者并非真正死亡——他们的意识被困在深蓝网络的某个加密节点里，成为某种数字实验的样本。幕后操控者，是一个自称"造梦师"的存在，而它本身，可能根本不是人类。',
@@ -809,7 +809,7 @@ EDEN：不。
     price: '¥58,000',
     rights: '独家版权 · AI辅助创作',
     status: '连载中',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+    videoUrl: '',
     synopsis: {
       background: '量子物理学家沈知意在实验室事故中，获得了一种罕见的能力——每当她睡着，意识就会漂移到一个平行宇宙，醒来时又回到原点。在不同的平行宇宙里，她的人生轨迹各不相同，但有一个男人——顾时遇，总是以某种形式出现在她身边。',
       rebirth: '他在一个宇宙里是她的青梅竹马，在另一个宇宙里是她的陌生人，在第三个宇宙里是她的敌人。但他们之间那条看不见的线，似乎跨越了所有平行宇宙。',
