@@ -9,7 +9,10 @@ const { migrate, seed } = require('./db/migrate');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const IS_PROD = process.env.NODE_ENV === 'production';
+const IS_PROD = process.env.NODE_ENV === 'production';// 确保健康检查路由最先处理
+app.get('/api/health', (req, res) => {
+  res.status(200).send('OK');
+});
 
 // ── Security headers ──────────────────────────────────────────
 app.use(helmet({
