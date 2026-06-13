@@ -1,10 +1,4 @@
-/**
- * Vercel Edge Function — catch-all API 代理
- *
- * 捕获所有 /api/* 请求，服务端转发到 Railway。
- * 用户浏览器 → Vercel Edge（无需代理）→ Railway（服务器间不受 GFW 限制）
- */
-
+// Vercel Edge proxy: browser → Vercel → Railway (bypasses GFW for server-to-server)
 export const config = { runtime: 'edge' }
 
 const RAILWAY = process.env.RAILWAY_URL ||
