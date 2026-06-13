@@ -1,3 +1,39 @@
+// 生成无外部依赖的 SVG 封面，彻底替代 picsum.photos
+const PALETTES = [
+  ['#1a0533', '#6b21a8', '#d4af37'],  // 紫金
+  ['#0c1f3c', '#1e40af', '#f59e0b'],  // 深蓝金
+  ['#1c0a00', '#92400e', '#fbbf24'],  // 暗棕金
+  ['#0f172a', '#334155', '#e2e8f0'],  // 深灰银
+  ['#0a0a1a', '#312e81', '#a78bfa'],  // 深紫薰衣草
+  ['#0d1117', '#161b22', '#58a6ff'],  // 暗夜蓝
+  ['#0a1628', '#0369a1', '#38bdf8'],  // 深海蓝
+]
+
+function makeCover(id, title) {
+  const [bg1, bg2, accent] = PALETTES[(id - 1) % PALETTES.length]
+  const char = title.slice(0, 1)
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+    <defs>
+      <linearGradient id="g${id}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${bg1}"/>
+        <stop offset="100%" stop-color="${bg2}"/>
+      </linearGradient>
+      <linearGradient id="s${id}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="transparent"/>
+        <stop offset="100%" stop-color="${bg1}" stop-opacity="0.9"/>
+      </linearGradient>
+    </defs>
+    <rect width="400" height="600" fill="url(#g${id})"/>
+    <rect x="20" y="20" width="360" height="560" rx="4" fill="none" stroke="${accent}" stroke-width="1" opacity="0.3"/>
+    <text x="200" y="340" font-family="serif" font-size="220" fill="${accent}" text-anchor="middle" dominant-baseline="middle" opacity="0.12">${char}</text>
+    <rect width="400" height="600" fill="url(#s${id})"/>
+    <text x="200" y="490" font-family="serif" font-size="32" fill="${accent}" text-anchor="middle" dominant-baseline="middle" letter-spacing="6">${title}</text>
+    <line x1="80" y1="520" x2="320" y2="520" stroke="${accent}" stroke-width="1" opacity="0.4"/>
+    <text x="200" y="548" font-family="sans-serif" font-size="13" fill="${accent}" text-anchor="middle" opacity="0.6" letter-spacing="3">十二猴子剧本</text>
+  </svg>`
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`
+}
+
 export const SCRIPTS = [
   // ─── 真人短剧剧本 ─────────────────────────────────────────────
   {
@@ -5,7 +41,7 @@ export const SCRIPTS = [
     category: 'live',
     title: '重生之帝国崛起',
     subtitle: '他死而复生，只为复仇与重建',
-    cover: 'https://picsum.photos/seed/empire/400/600',
+    cover: makeCover(1, '重生之帝国崛起'),
     tags: ['重生', '商战', '复仇', '权谋'],
     totalEpisodes: 80,
     price: '¥68,000',
@@ -557,7 +593,7 @@ export const SCRIPTS = [
     category: 'live',
     title: '总裁的替嫁新娘',
     subtitle: '阴差阳错嫁错人，却遇见一生所爱',
-    cover: 'https://picsum.photos/seed/bride/400/600',
+    cover: makeCover(2, '总裁的替嫁新娘'),
     tags: ['豪门', '甜宠', '阴差阳错', '都市'],
     totalEpisodes: 60,
     price: '¥48,000',
@@ -587,7 +623,7 @@ export const SCRIPTS = [
     category: 'live',
     title: '逆袭女王',
     subtitle: '从谷底爬起，她要让所有人刮目相看',
-    cover: 'https://picsum.photos/seed/queen/400/600',
+    cover: makeCover(3, '逆袭女王'),
     tags: ['励志', '职场', '爱情', '逆袭'],
     totalEpisodes: 70,
     price: '¥52,000',
@@ -614,7 +650,7 @@ export const SCRIPTS = [
     category: 'live',
     title: '隐婚帝少',
     subtitle: '他是帝国继承人，她是不知情的秘密妻子',
-    cover: 'https://picsum.photos/seed/secret/400/600',
+    cover: makeCover(4, '隐婚帝少'),
     tags: ['豪门', '隐婚', '宠溺', '反差'],
     totalEpisodes: 65,
     price: '¥55,000',
@@ -642,7 +678,7 @@ export const SCRIPTS = [
     category: 'ai',
     title: '星际孤岛',
     subtitle: '2287年，最后的人类在宇宙边缘求生',
-    cover: 'https://picsum.photos/seed/space/400/600',
+    cover: makeCover(5, '星际孤岛'),
     tags: ['科幻', '悬疑', '末世', '生存'],
     totalEpisodes: 50,
     price: '¥88,000',
@@ -778,7 +814,7 @@ EDEN：不。
     category: 'ai',
     title: '数字迷宫',
     subtitle: '当数字意识觉醒，人类还是主角吗？',
-    cover: 'https://picsum.photos/seed/matrix/400/600',
+    cover: makeCover(6, '数字迷宫'),
     tags: ['赛博朋克', '惊悚', '科幻', '反乌托邦'],
     totalEpisodes: 45,
     price: '¥72,000',
@@ -803,7 +839,7 @@ EDEN：不。
     category: 'ai',
     title: '量子爱恋',
     subtitle: '平行宇宙里的每一个你，我都爱过',
-    cover: 'https://picsum.photos/seed/quantum/400/600',
+    cover: makeCover(7, '量子爱恋'),
     tags: ['科幻', '爱情', '平行宇宙', '治愈'],
     totalEpisodes: 40,
     price: '¥58,000',
