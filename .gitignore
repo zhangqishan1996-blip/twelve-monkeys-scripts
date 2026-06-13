@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.env
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Claude Code project files
+.claude/
+
+# Keep .env.production as a template (no real keys inside)
+!server/.env.production

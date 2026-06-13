@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "十二猴子劇本"
+  },
+  "nav": {
+    "home": "首頁",
+    "shop": "金幣商店",
+    "login": "登入",
+    "register": "註冊",
+    "logout": "登出"
+  },
+  "player": {
+    "episode": "第 {num} 集",
+    "free": "免費",
+    "locked": "付費"
+  },
+  "paywall": {
+    "title": "付費集數",
+    "subtitle": "解鎖此集繼續觀看",
+    "cost": "需 {coins} 金幣解鎖",
+    "unlock": "立即解鎖",
+    "recharge": "儲值金幣",
+    "watchAd": "看廣告免費解鎖",
+    "adNote": "觀看 30 秒廣告即可免費觀看",
+    "balance": "您的餘額：{coins} 金幣",
+    "insufficient": "金幣不足，請先儲值。"
+  },
+  "ad": {
+    "title": "贊助廣告",
+    "skip": "{sec} 秒後可跳過",
+    "watching": "正在觀看廣告...",
+    "complete": "廣告結束！集數已解鎖。",
+    "close": "關閉並觀看集數"
+  },
+  "shop": {
+    "title": "金幣商店",
+    "subtitle": "儲值金幣以解鎖付費集數",
+    "buy": "立即購買",
+    "processing": "正在跳轉至結帳頁面..."
+  },
+  "auth": {
+    "loginTitle": "歡迎回來",
+    "registerTitle": "建立帳號",
+    "email": "電子信箱",
+    "password": "密碼",
+    "loginBtn": "登入",
+    "registerBtn": "註冊",
+    "switchToRegister": "還沒有帳號？立即註冊",
+    "switchToLogin": "已有帳號？立即登入",
+    "newCoins": "新用戶送 100 金幣！"
+  },
+  "payment": {
+    "success": "付款成功！",
+    "successMsg": "金幣已入帳，盡情觀看吧！",
+    "cancel": "付款取消",
+    "cancelMsg": "付款未完成，可隨時重試。",
+    "backHome": "返回首頁"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "Doce Monos Guiones"
+  },
+  "nav": {
+    "home": "Inicio",
+    "shop": "Tienda de Monedas",
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar Sesión"
+  },
+  "player": {
+    "episode": "Episodio {num}",
+    "free": "GRATIS",
+    "locked": "BLOQUEADO"
+  },
+  "paywall": {
+    "title": "Episodio Premium",
+    "subtitle": "Desbloquea este episodio para seguir viendo",
+    "cost": "{coins} monedas para desbloquear",
+    "unlock": "Desbloquear Episodio",
+    "recharge": "Recargar Monedas",
+    "watchAd": "Ver Anuncio para Desbloquear",
+    "adNote": "Mira un anuncio de 30 segundos gratis",
+    "balance": "Tu saldo: {coins} monedas",
+    "insufficient": "Monedas insuficientes. Recarga para continuar."
+  },
+  "ad": {
+    "title": "Anuncio Patrocinado",
+    "skip": "Puedes omitir en {sec}s",
+    "watching": "Viendo anuncio...",
+    "complete": "¡Anuncio completado! Episodio desbloqueado.",
+    "close": "Cerrar y Ver Episodio"
+  },
+  "shop": {
+    "title": "Tienda de Monedas",
+    "subtitle": "Recarga monedas para desbloquear episodios premium",
+    "buy": "Comprar Ahora",
+    "processing": "Redirigiendo al pago..."
+  },
+  "auth": {
+    "loginTitle": "Bienvenido de Nuevo",
+    "registerTitle": "Crear Cuenta",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "loginBtn": "Iniciar Sesión",
+    "registerBtn": "Registrarse",
+    "switchToRegister": "¿No tienes cuenta? Regístrate",
+    "switchToLogin": "¿Ya tienes cuenta? Inicia Sesión",
+    "newCoins": "¡Los nuevos usuarios reciben 100 monedas gratis!"
+  },
+  "payment": {
+    "success": "¡Pago Exitoso!",
+    "successMsg": "Tus monedas han sido acreditadas. ¡Disfruta el show!",
+    "cancel": "Pago Cancelado",
+    "cancelMsg": "Tu pago no se completó. Inténtalo de nuevo.",
+    "backHome": "Volver al Inicio"
+  }
+}

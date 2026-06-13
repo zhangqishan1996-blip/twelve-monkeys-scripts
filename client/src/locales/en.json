@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "Twelve Monkeys Scripts"
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Coin Shop",
+    "login": "Login",
+    "register": "Sign Up",
+    "logout": "Logout"
+  },
+  "player": {
+    "episode": "Episode {num}",
+    "free": "FREE",
+    "locked": "LOCKED"
+  },
+  "paywall": {
+    "title": "Premium Episode",
+    "subtitle": "Unlock this episode to keep watching",
+    "cost": "{coins} Coins to unlock",
+    "unlock": "Unlock Episode",
+    "recharge": "Recharge Coins",
+    "watchAd": "Watch Ad to Unlock",
+    "adNote": "Watch a 30-second ad for free access",
+    "balance": "Your balance: {coins} coins",
+    "insufficient": "Not enough coins. Recharge to continue."
+  },
+  "ad": {
+    "title": "Sponsored Ad",
+    "skip": "You can skip in {sec}s",
+    "watching": "Watching ad...",
+    "complete": "Ad complete! Episode unlocked.",
+    "close": "Close & Watch Episode"
+  },
+  "shop": {
+    "title": "Coin Shop",
+    "subtitle": "Recharge coins to unlock premium episodes",
+    "buy": "Buy Now",
+    "processing": "Redirecting to checkout..."
+  },
+  "auth": {
+    "loginTitle": "Welcome Back",
+    "registerTitle": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Login",
+    "registerBtn": "Sign Up",
+    "switchToRegister": "Don't have an account? Sign Up",
+    "switchToLogin": "Already have an account? Login",
+    "newCoins": "New users get 100 free coins!"
+  },
+  "payment": {
+    "success": "Payment Successful!",
+    "successMsg": "Your coins have been credited. Enjoy the show!",
+    "cancel": "Payment Cancelled",
+    "cancelMsg": "Your payment was not completed. Try again anytime.",
+    "backHome": "Back to Home"
+  }
+}
