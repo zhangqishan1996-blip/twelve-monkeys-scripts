@@ -9,10 +9,7 @@ const { migrate, seed } = require('./db/migrate');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const IS_PROD = process.env.NODE_ENV === 'production';// 确保健康检查路由最先处理
-app.get('/api/health', (req, res) => {
-  res.status(200).send('OK');
-});
+const IS_PROD = process.env.NODE_ENV === 'production';
 
 // ── Security headers ──────────────────────────────────────────
 app.use(helmet({
@@ -63,6 +60,15 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/episodes', require('./routes/episodes'));
 app.use('/api/payments', paymentsRouter);
 
+// ── Health check ──────────────────────────────────────────────
+app.get('/api/health', (req, res) => res.json({
+  status: 'ok',
+  env: process.env.NODE_ENV || 'development',
+  stripe: !!(process.env.STRIPE_SECRET_KEY && !process.env.STRIPE_SECRET_KEY.includes('REPLACE')),
+  db: !(process.env.DATABASE_URL || '').includes('REPLACE') && !!process.env.DATABASE_URL,
+  time: new Date().toISOString(),
+}));
+
 // ── Serve frontend static build in production ─────────────────
 if (IS_PROD) {
   const distPath = path.join(__dirname, '../../client/dist');
@@ -72,15 +78,6 @@ if (IS_PROD) {
     res.sendFile(path.join(distPath, 'index.html'));
   });
 }
-
-// ── Health check ──────────────────────────────────────────────
-app.get('/api/health', (req, res) => res.json({
-  status: 'ok',
-  env: process.env.NODE_ENV || 'development',
-  stripe: !!(process.env.STRIPE_SECRET_KEY && !process.env.STRIPE_SECRET_KEY.includes('REPLACE')),
-  db: !(process.env.DATABASE_URL || '').includes('REPLACE') && !!process.env.DATABASE_URL,
-  time: new Date().toISOString(),
-}));
 
 // ── Global error handler ──────────────────────────────────────
 app.use((err, req, res, _next) => {
