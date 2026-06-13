@@ -1,7 +1,12 @@
 import axios from 'axios'
 
+// Dev: Vite proxy forwards /api → localhost:3000
+// Production: Vercel Edge Function at /api/[...path].js proxies to Railway
+// 无需 VITE_API_URL — 与前端同域，国内用户无需代理即可访问
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : '/api',
+  baseURL: import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}/api`
+    : '/api',
   timeout: 10000,
 })
 
