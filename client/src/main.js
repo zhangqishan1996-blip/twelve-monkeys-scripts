@@ -16,3 +16,9 @@ const i18n = createI18n({
 })
 
 createApp(App).use(router).use(i18n).mount('#app')
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {})
+  })
+}

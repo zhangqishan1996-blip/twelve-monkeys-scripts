@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#0a0a0a"/>
+  <rect x="4" y="4" width="504" height="504" rx="78" fill="none" stroke="#d4af37" stroke-width="6" opacity="0.6"/>
+  <!-- 胶片边缘装饰 -->
+  <rect x="30" y="30" width="20" height="30" rx="4" fill="#d4af37" opacity="0.5"/>
+  <rect x="30" y="76" width="20" height="30" rx="4" fill="#d4af37" opacity="0.5"/>
+  <rect x="30" y="122" width="20" height="30" rx="4" fill="#d4af37" opacity="0.5"/>
+  <rect x="462" y="30" width="20" height="30" rx="4" fill="#d4af37" opacity="0.5"/>
+  <rect x="462" y="76" width="20" height="30" rx="4" fill="#d4af37" opacity="0.5"/>
+  <rect x="462" y="122" width="20" height="30" rx="4" fill="#d4af37" opacity="0.5"/>
+  <!-- 主文字：十二 -->
+  <text x="256" y="290" font-family="serif" font-size="220" font-weight="bold" fill="#d4af37" text-anchor="middle" dominant-baseline="middle" letter-spacing="-8">十二</text>
+  <!-- 副文字：猴子剧本 -->
+  <text x="256" y="420" font-family="serif" font-size="68" fill="#d4af37" text-anchor="middle" dominant-baseline="middle" opacity="0.85" letter-spacing="8">猴子剧本</text>
+  <!-- 金线分隔 -->
+  <line x1="80" y1="340" x2="432" y2="340" stroke="#d4af37" stroke-width="1.5" opacity="0.4"/>
+</svg>
