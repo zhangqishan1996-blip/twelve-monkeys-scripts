@@ -2,37 +2,27 @@
   <div class="min-h-dvh bg-[#0a0a0a] text-white">
     <NavBar :transparent="false" />
 
-    <!-- Hero banner -->
+    <!-- Hero banner（紧凑版） -->
     <div class="relative pt-14 overflow-hidden">
-      <!-- Cinematic bg -->
-      <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-black" />
-      <div class="absolute inset-0 opacity-30"
-           style="background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(245,158,11,0.15), transparent);" />
-      <!-- Film grain texture -->
-      <div class="absolute inset-0 opacity-5"
-           style="background-image: url('data:image/svg+xml,<svg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.4%22/></svg>');" />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-900 to-[#0a0a0a]" />
+      <div class="absolute inset-0 opacity-20"
+           style="background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(245,158,11,0.2), transparent);" />
 
-      <div class="relative px-4 py-10 text-center max-w-2xl mx-auto">
-        <!-- Brand mark -->
-        <div class="flex justify-center mb-5">
-          <div class="flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-4 py-1.5 rounded-full">
-            <span class="text-amber-400 text-xs font-bold tracking-widest uppercase">Twelve Monkeys Scripts</span>
+      <div class="relative px-4 pt-5 pb-4 max-w-2xl mx-auto">
+        <!-- 标题行 + 统计并排 -->
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-2xl font-black tracking-tight">
+              <span class="text-white">十二猴子</span><span class="text-amber-400">剧本</span>
+            </h1>
+            <p class="text-gray-500 text-xs mt-0.5">精选短剧版权 · 专业授权 · 法律保护</p>
           </div>
-        </div>
-
-        <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-3">
-          <span class="text-white">十二猴子</span><span class="text-amber-400">剧本</span>
-        </h1>
-        <p class="text-gray-400 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
-          精选原创短剧版权 · 真人剧本 + AI辅助创作<br/>
-          专业授权 · 法律保护 · 一站式版权交易
-        </p>
-
-        <!-- Stats row -->
-        <div class="flex justify-center gap-6 mt-7 text-center">
-          <div v-for="stat in stats" :key="stat.label">
-            <div class="text-amber-400 font-black text-xl">{{ stat.value }}</div>
-            <div class="text-gray-500 text-xs mt-0.5">{{ stat.label }}</div>
+          <!-- Stats inline -->
+          <div class="flex gap-4 text-center">
+            <div v-for="stat in stats" :key="stat.label">
+              <div class="text-amber-400 font-black text-base">{{ stat.value }}</div>
+              <div class="text-gray-600 text-[10px]">{{ stat.label }}</div>
+            </div>
           </div>
         </div>
       </div>

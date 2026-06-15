@@ -1,35 +1,46 @@
-// 生成无外部依赖的 SVG 封面，彻底替代 picsum.photos
 const PALETTES = [
-  ['#1a0533', '#6b21a8', '#d4af37'],  // 紫金
-  ['#0c1f3c', '#1e40af', '#f59e0b'],  // 深蓝金
-  ['#1c0a00', '#92400e', '#fbbf24'],  // 暗棕金
-  ['#0f172a', '#334155', '#e2e8f0'],  // 深灰银
-  ['#0a0a1a', '#312e81', '#a78bfa'],  // 深紫薰衣草
-  ['#0d1117', '#161b22', '#58a6ff'],  // 暗夜蓝
-  ['#0a1628', '#0369a1', '#38bdf8'],  // 深海蓝
+  { bg1: '#1a0533', bg2: '#6b21a8', accent: '#d4af37', shape: 'crown' },
+  { bg1: '#0c1f3c', bg2: '#1e3a8a', accent: '#f59e0b', shape: 'diamond' },
+  { bg1: '#1c0a00', bg2: '#7c2d12', accent: '#fbbf24', shape: 'phoenix' },
+  { bg1: '#0f172a', bg2: '#1e293b', accent: '#94a3b8', shape: 'sword' },
+  { bg1: '#0a0a1a', bg2: '#1e1b4b', accent: '#a78bfa', shape: 'star' },
+  { bg1: '#0d1117', bg2: '#0f2744', accent: '#38bdf8', shape: 'circuit' },
+  { bg1: '#0a1628', bg2: '#0c4a6e', accent: '#7dd3fc', shape: 'wave' },
 ]
 
+const SHAPES = {
+  crown:   `<path d="M200 120 L240 200 L280 150 L260 260 L140 260 L120 150 L160 200 Z" fill="none" stroke="ACCENT" stroke-width="2" opacity="0.18"/>`,
+  diamond: `<polygon points="200,100 280,220 200,340 120,220" fill="none" stroke="ACCENT" stroke-width="2" opacity="0.18"/><polygon points="200,140 260,220 200,300 140,220" fill="ACCENT" opacity="0.06"/>`,
+  phoenix: `<ellipse cx="200" cy="200" rx="90" ry="120" fill="none" stroke="ACCENT" stroke-width="1.5" opacity="0.15"/><ellipse cx="200" cy="200" rx="50" ry="70" fill="ACCENT" opacity="0.07"/>`,
+  sword:   `<line x1="200" y1="80" x2="200" y2="320" stroke="ACCENT" stroke-width="3" opacity="0.2"/><line x1="140" y1="180" x2="260" y2="180" stroke="ACCENT" stroke-width="2" opacity="0.15"/><polygon points="200,80 210,130 200,140 190,130" fill="ACCENT" opacity="0.2"/>`,
+  star:    `<polygon points="200,90 215,155 280,155 228,193 247,258 200,218 153,258 172,193 120,155 185,155" fill="none" stroke="ACCENT" stroke-width="1.5" opacity="0.2"/><polygon points="200,120 210,155 245,155 218,175 228,210 200,190 172,210 182,175 155,155 190,155" fill="ACCENT" opacity="0.07"/>`,
+  circuit: `<path d="M120 180 L160 180 L160 160 L240 160 L240 180 L280 180" stroke="ACCENT" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M120 220 L150 220 L150 240 L250 240 L250 220 L280 220" stroke="ACCENT" stroke-width="1.5" fill="none" opacity="0.2"/><circle cx="160" cy="180" r="4" fill="ACCENT" opacity="0.3"/><circle cx="240" cy="160" r="4" fill="ACCENT" opacity="0.3"/><circle cx="150" cy="240" r="4" fill="ACCENT" opacity="0.3"/>`,
+  wave:    `<path d="M80 180 Q130 140 180 180 Q230 220 280 180 Q330 140 370 180" stroke="ACCENT" stroke-width="2" fill="none" opacity="0.2"/><path d="M80 220 Q130 180 180 220 Q230 260 280 220 Q330 180 370 220" stroke="ACCENT" stroke-width="1.5" fill="none" opacity="0.15"/>`,
+}
+
 function makeCover(id, title) {
-  const [bg1, bg2, accent] = PALETTES[(id - 1) % PALETTES.length]
-  const char = title.slice(0, 1)
+  const p = PALETTES[(id - 1) % PALETTES.length]
+  const shapesvg = (SHAPES[p.shape] || '').replaceAll('ACCENT', p.accent)
+  const chars = title.slice(0, 2)
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
     <defs>
-      <linearGradient id="g${id}" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="${bg1}"/>
-        <stop offset="100%" stop-color="${bg2}"/>
+      <linearGradient id="g${id}" x1="0" y1="0" x2="0.8" y2="1">
+        <stop offset="0%" stop-color="${p.bg1}"/>
+        <stop offset="100%" stop-color="${p.bg2}"/>
       </linearGradient>
       <linearGradient id="s${id}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="transparent"/>
-        <stop offset="100%" stop-color="${bg1}" stop-opacity="0.9"/>
+        <stop offset="30%" stop-color="transparent"/>
+        <stop offset="100%" stop-color="${p.bg1}" stop-opacity="0.95"/>
       </linearGradient>
     </defs>
     <rect width="400" height="600" fill="url(#g${id})"/>
-    <rect x="20" y="20" width="360" height="560" rx="4" fill="none" stroke="${accent}" stroke-width="1" opacity="0.3"/>
-    <text x="200" y="340" font-family="serif" font-size="220" fill="${accent}" text-anchor="middle" dominant-baseline="middle" opacity="0.12">${char}</text>
+    ${shapesvg}
+    <text x="200" y="310" font-family="serif" font-size="160" fill="${p.accent}" text-anchor="middle" dominant-baseline="middle" opacity="0.1" letter-spacing="-8">${chars}</text>
     <rect width="400" height="600" fill="url(#s${id})"/>
-    <text x="200" y="490" font-family="serif" font-size="32" fill="${accent}" text-anchor="middle" dominant-baseline="middle" letter-spacing="6">${title}</text>
-    <line x1="80" y1="520" x2="320" y2="520" stroke="${accent}" stroke-width="1" opacity="0.4"/>
-    <text x="200" y="548" font-family="sans-serif" font-size="13" fill="${accent}" text-anchor="middle" opacity="0.6" letter-spacing="3">十二猴子剧本</text>
+    <rect x="24" y="24" width="352" height="552" rx="6" fill="none" stroke="${p.accent}" stroke-width="1" opacity="0.25"/>
+    <line x1="60" y1="460" x2="340" y2="460" stroke="${p.accent}" stroke-width="0.5" opacity="0.3"/>
+    <text x="200" y="496" font-family="serif" font-size="30" fill="${p.accent}" text-anchor="middle" dominant-baseline="middle" letter-spacing="4">${title}</text>
+    <text x="200" y="545" font-family="sans-serif" font-size="11" fill="${p.accent}" text-anchor="middle" opacity="0.45" letter-spacing="4">TWELVE MONKEYS</text>
   </svg>`
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`
 }
